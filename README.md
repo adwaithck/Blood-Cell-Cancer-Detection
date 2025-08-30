@@ -113,41 +113,6 @@ Dense(5, activation='softmax')  # 5 classes
 - Callbacks: EarlyStopping (patience=4), ModelCheckpoint
 - Maximum Epochs: 50
 
-## Performance
-
-### MobileNetV2 Results
-- **Test Accuracy**: 99.80%
-- **Test Precision**: 99.80%
-- **Test Recall**: 99.80%
-- **Test F1-Score**: 99.80%
-
-**Per-Class Performance:**
-- Basophil: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Erythroblast: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Monocyte: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Myeloblast: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Segmented Neutrophil: 1.00 precision, 1.00 recall, 1.00 f1-score
-
-### EfficientNetB0 Results
-- **Test Accuracy**: 99.80%
-- **Test Precision**: 99.80%
-- **Test Recall**: 99.80%
-- **Test F1-Score**: 99.80%
-
-**Per-Class Performance:**
-- Basophil: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Erythroblast: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Monocyte: 1.00 precision, 1.00 recall, 1.00 f1-score
-- Myeloblast: 0.99 precision, 1.00 recall, 1.00 f1-score
-- Segmented Neutrophil: 1.00 precision, 0.99 recall, 0.99 f1-score
-
-### Training Progress
-Both models demonstrated excellent convergence:
-- **Validation accuracy** reached 99.2%+ within ~9 epochs
-- **Training accuracy** consistently improved across epochs
-- **Loss values** decreased steadily with minimal overfitting
-- **Early stopping** mechanism prevented overfitting
-
 ## Installation
 
 ### Prerequisites
@@ -252,12 +217,12 @@ print(f"Confidence: {predictions[0][predicted_class]:.4f}")
 
 | Model | Parameters | Trainable | Test Accuracy | Training Time |
 |-------|------------|-----------|---------------|---------------|
-| MobileNetV2 | 2.62M | 1.89M | 99.80% | Fast |
+| MobileNetV2 | 2.62M | 1.89M | 99.86% | Fast |
 | EfficientNetB0 | 4.41M | 1.86M | 99.80% | Medium |
 
 ### Key Findings
 
-1. **Exceptional Performance**: Both models achieved outstanding 99.80% accuracy on the test set
+1. **Exceptional Performance**: Both models achieved outstanding around 99% accuracy on the test set
 2. **Perfect Classification**: Near-perfect precision and recall across all blood cell types
 3. **Robust Generalization**: Strong performance indicates good model generalization
 4. **Efficient Architecture**: MobileNetV2 offers similar performance with fewer parameters
@@ -286,64 +251,11 @@ Both models demonstrated perfect or near-perfect classification with minimal mis
 - **Learning Rate**: Conservative 1e-4 for stable convergence
 - **Batch Processing**: Efficient memory management
 
-## Future Work
 
-### Potential Improvements
-1. **Model Ensemble**: Combine predictions from multiple architectures
-2. **Advanced Augmentation**: Implement more sophisticated data augmentation
-3. **Attention Mechanisms**: Integrate attention layers for better feature focus
-4. **Larger Dataset**: Expand training data for improved robustness
-5. **Cross-Validation**: Implement k-fold validation for better evaluation
-6. **Model Compression**: Optimize models for deployment environments
-
-### Clinical Integration
-1. **Real-time Inference**: Develop API for clinical workflow integration
-2. **Batch Processing**: Support for multiple image analysis
-3. **Confidence Thresholding**: Implement uncertainty quantification
-4. **Explainable AI**: Add visualization for model decision explanation
-
-## Contributing
-
-We welcome contributions to improve this blood cell classification system:
-
-1. **Fork the repository**
-2. **Create feature branch** (`git checkout -b feature/improvement`)
-3. **Commit changes** (`git commit -am 'Add new feature'`)
-4. **Push to branch** (`git push origin feature/improvement`)
-5. **Create Pull Request**
-
-### Areas for Contribution
-- Model architecture improvements
-- Data preprocessing enhancements
-- Evaluation metric additions
-- Documentation improvements
-- Bug fixes and optimizations
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-
-- **TensorFlow/Keras** for deep learning framework
-- **ImageNet** for pre-trained model weights
-- **Dataset Contributors** for providing blood cell images
-- **Scientific Community** for transfer learning research
-
-## Citation
-
-If you use this work in your research, please cite:
-
-```bibtex
-@misc{blood_cell_detection_2024,
-  title={Blood Cell Cancer Detection using Deep Learning},
-  author={Your Name},
-  year={2024},
-  publisher={GitHub},
-  howpublished={\url{https://github.com/your-username/Blood-Cell-Cancer-Detection}}
-}
-```
-
----
 
 **Note**: This project is intended for educational and research purposes. For clinical applications, please ensure proper validation and regulatory compliance.
